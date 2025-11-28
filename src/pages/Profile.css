@@ -227,3 +227,219 @@ input:checked + .slider:before {
     transform: scale(1);
   }
 }
+
+.join-date {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.tabs-container {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid #e0e0e0;
+  overflow-x: auto;
+}
+
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #e0e0e0;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  background: var(--color-primary);
+  color: var(--text-on-accent);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(64, 207, 255, 0.4);
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 20px;
+}
+
+.stat-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s;
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+.stat-card:nth-child(5) { animation-delay: 0.5s; }
+.stat-card:nth-child(6) { animation-delay: 0.6s; }
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(64, 207, 255, 0.2);
+  border-color: var(--color-primary);
+}
+
+.stat-card.highlight {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border: none;
+  grid-column: 1 / -1;
+}
+
+.stat-card.highlight .stat-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.stat-card.highlight .stat-info h3,
+.stat-card.highlight .stat-info p {
+  color: var(--text-on-accent);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.stat-info h3 {
+  font-size: 24px;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.stat-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.badges-container {
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.badge-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s;
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.badge-card:nth-child(1) { animation-delay: 0.1s; }
+.badge-card:nth-child(2) { animation-delay: 0.2s; }
+.badge-card:nth-child(3) { animation-delay: 0.3s; }
+.badge-card:nth-child(4) { animation-delay: 0.4s; }
+.badge-card:nth-child(5) { animation-delay: 0.5s; }
+
+.badge-card.earned {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, rgba(64, 207, 255, 0.1) 0%, rgba(64, 207, 255, 0.05) 100%);
+}
+
+.badge-card.earned:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(64, 207, 255, 0.3);
+}
+
+.badge-card.locked {
+  opacity: 0.5;
+}
+
+.badge-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.badge-card h4 {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  opacity: 0.7;
+}
+
+.settings-container {
+  animation: fadeIn 0.3s ease;
+}
+
+.setting-item.danger {
+  color: #ff4444;
+}
+
+.setting-item.danger:hover {
+  background: rgba(255, 68, 68, 0.1);
+  border-color: #ff4444;
+}
+
+.setting-item.danger .icon,
+.setting-item.danger > span:nth-child(2) {
+  color: #ff4444;
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
