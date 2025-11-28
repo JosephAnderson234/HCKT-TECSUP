@@ -1,0 +1,89 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 400px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(64, 207, 255, 0.3);
+  z-index: 10000;
+  animation: slideInRight 0.3s ease;
+  border-left: 4px solid;
+  border: 2px solid;
+}
+
+.notification-success {
+  border-color: #40cfff;
+  background: #f0f9ff;
+}
+
+.notification-error {
+  border-color: #ff6b6b;
+  background: #fff5f5;
+}
+
+.notification-info {
+  border-color: #40cfff;
+  background: #f0f9ff;
+}
+
+.notification-warning {
+  border-color: #ffd43b;
+  background: #fffbf0;
+}
+
+.notification-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.notification-message {
+  flex: 1;
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.notification-close:hover {
+  color: var(--color-primary);
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
