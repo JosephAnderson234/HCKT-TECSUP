@@ -1,0 +1,225 @@
+.help-page {
+  padding-bottom: 80px;
+  background: var(--bg-secondary);
+}
+
+.help-content {
+  padding: 20px;
+}
+
+.info-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(64, 207, 255, 0.15);
+  border: 2px solid var(--color-primary);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.info-card h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.info-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.link-primary {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.link-primary:hover {
+  color: var(--color-primary-dark);
+}
+
+.emergency-section {
+  margin-bottom: 32px;
+}
+
+.emergency-section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.btn-emergency {
+  width: 100%;
+  background: var(--color-primary);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(64, 207, 255, 0.4);
+  transition: all 0.3s;
+}
+
+.btn-emergency:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(64, 207, 255, 0.5);
+}
+
+.btn-secondary {
+  width: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--color-primary);
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-hover);
+}
+
+.resources-section h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.accordion {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s;
+}
+
+.accordion:hover {
+  border-color: var(--color-primary);
+}
+
+.accordion summary {
+  padding: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+  color: var(--text-primary);
+}
+
+.accordion summary:hover {
+  background: var(--bg-hover);
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary:after {
+  content: '▼';
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform 0.3s;
+}
+
+.accordion[open] summary:after {
+  transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+.accordion p {
+  padding: 0 16px 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.emergency-modal {
+  background: var(--bg-primary);
+  border-radius: 20px;
+  padding: 32px 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(64, 207, 255, 0.3);
+  border: 2px solid var(--color-primary);
+}
+
+.emergency-modal h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.emergency-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.emergency-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  align-items: center;
+  border: 1px solid var(--color-primary);
+}
+
+.emergency-icon {
+  font-size: 32px;
+}
+
+.emergency-item h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.phone-number {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-close-modal {
+  width: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 2px solid var(--color-primary);
+  padding: 14px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-close-modal:hover {
+  background: var(--color-primary);
+  color: var(--text-on-accent);
+}
