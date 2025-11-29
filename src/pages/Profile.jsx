@@ -1,5 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { userStats, notifications } from '../data/mockData'
+import { authService } from '../services/auth'
+import { analisisAPI, agentesAPI } from '../services/api'
 import './Profile.css'
 
 function Profile() {
@@ -7,15 +10,55 @@ function Profile() {
   const [pushNotifications, setPushNotifications] = useState(true)
   const [showToast, setShowToast] = useState(false)
   const [activeTab, setActiveTab] = useState('settings')
+  const [userData, setUserData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+  const currentUser = authService.getCurrentUser()
+
+  useEffect(() => {
+    loadUserData()
+  }, [])
+
+  const loadUserData = async () => {
+    if (!currentUser) return
+    
+    try {
+      const data = await analisisAPI.obtenerUsuario(currentUser.correo)
+      setUserData(data)
+      setAnonymousMode(!data.usuario.autorizacion)
+    } catch (error) {
+      console.error('Error loading user data:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const showNotification = (message) => {
     setShowToast(message)
     setTimeout(() => setShowToast(false), 2000)
   }
 
-  const handleToggle = (setter, value, name) => {
-    setter(!value)
-    showNotification(`${name} ${!value ? 'activado' : 'desactivado'}`)
+  const handleToggle = async (setter, value, name) => {
+    if (name === 'Modo Anónimo' && currentUser) {
+      try {
+        const newValue = !value
+        await agentesAPI.toggleAutorizacion(currentUser.correo, !newValue)
+        setter(newValue)
+        showNotification(`${name} ${newValue ? 'activado' : 'desactivado'}`)
+        await loadUserData()
+      } catch (error) {
+        console.error('Error toggling authorization:', error)
+        showNotification('Error al cambiar configuración')
+      }
+    } else {
+      setter(!value)
+      showNotification(`${name} ${!value ? 'activado' : 'desactivado'}`)
+    }
+  }
+
+  const handleLogout = () => {
+    authService.logout()
+    navigate('/login')
   }
 
   return (
@@ -30,8 +73,15 @@ function Profile() {
           <div className="avatar-large">👤</div>
           <button className="edit-badge">✏️</button>
         </div>
-        <h2>Alex Doe</h2>
-        <p className="email">alex.doe@university.com</p>
+        <h2>{currentUser?.correo.split('@')[0]}</h2>
+        <p className="email">{currentUser?.correo}</p>
+        {userData?.datos_academicos && (
+          <div className="user-info">
+            <p className="info-item">📚 {userData.datos_academicos.carrera}</p>
+            <p className="info-item">📊 Promedio: {userData.datos_academicos.promedio_ponderado}</p>
+            <p className="info-item">🎯 Ciclo: {userData.datos_academicos.ciclo_actual}</p>
+          </div>
+        )}
         <p className="join-date">Miembro desde {userStats.joinDate}</p>
       </div>
 
@@ -203,7 +253,7 @@ function Profile() {
       
       <div className="settings-section">
         <h3>SESIÓN</h3>
-        <div className="setting-item danger">
+        <div className="setting-item danger" onClick={handleLogout}>
           <span className="icon">🚪</span>
           <span>Cerrar Sesión</span>
           <span className="arrow">›</span>

@@ -443,3 +443,31 @@ input:checked + .slider:before {
     opacity: 1;
   }
 }
+
+/* User Info Styles */
+.email {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.user-info {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.info-item {
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.join-date {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 12px;
+}

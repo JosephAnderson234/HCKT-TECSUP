@@ -1,0 +1,70 @@
+// Authentication Service
+
+// Mock users data
+const MOCK_USERS = [
+  {"id": "73f56c3d-4f1b-4453-a47f-5899bf4ef172","correo": "carmen.fernandez@gmail.com","contrasena": "hash_358e9e42de7742b0","autorizacion": true},
+  {"id": "ade2081c-e7cf-480a-987a-d2e557f5a9f4","correo": "carlos.lopez@utec.edu.pe","contrasena": "hash_09eb793cccf44225","autorizacion": false},
+  {"id": "ae5959ee-b57c-4607-8edb-879c04e421a6","correo": "fernando.vega@outlook.com","contrasena": "hash_f864978c999c47a6","autorizacion": true},
+  {"id": "41a1fc6f-3621-4a2a-bdc5-61ca363762a1","correo": "magali.flores@outlook.com","contrasena": "hash_ea27b1c4662c47e7","autorizacion": true},
+  {"id": "b54a3ca2-96a6-4dbb-8af4-eaeaf43d4cd4","correo": "laura.sanchez@utec.edu.pe","contrasena": "hash_8efd9001d2e345f8","autorizacion": true},
+  {"id": "5e4de0b3-a543-4ea3-8d4e-daebcaeadc04","correo": "carlos.lopez@outlook.com","contrasena": "hash_5baa02c9139142ae","autorizacion": false},
+  {"id": "674e80c0-3d81-41c1-bd4b-d873cda2ad7c","correo": "ana.martinez@gmail.com","contrasena": "hash_87899c35140f4445","autorizacion": false},
+  {"id": "a497d4cb-2a7e-4d63-ac9b-14d48bb18fdc","correo": "maria.garcia@utec.edu.pe","contrasena": "hash_6591d775a2ba4668","autorizacion": false},
+  {"id": "67130e36-33c6-418b-abc2-c81302e0dee5","correo": "roberto.diaz@outlook.com","contrasena": "hash_3e14ab2b8aa64b5d","autorizacion": true},
+  {"id": "a2f43455-14f2-442b-a5ec-b542ad120f82","correo": "diego.morales@gmail.com","contrasena": "hash_9a1336bece76441c","autorizacion": true},
+  {"id": "adb32e9c-413d-4de0-a2c0-01062ce9afa9","correo": "camila.rojas@gmail.com","contrasena": "hash_73971cc32a4e4b2f","autorizacion": true},
+  {"id": "332b6807-22ba-4d0c-be8e-6a3716f176c7","correo": "pedro.flores@outlook.com","contrasena": "hash_4a4e49f5b62046ec","autorizacion": true},
+  {"id": "24ce67ab-371a-40af-a676-36f3cac21cc9","correo": "sofia.castro@gmail.com","contrasena": "hash_c53b65f250064451","autorizacion": true},
+  {"id": "5e57e2b5-1891-4131-a2be-06dff9987e95","correo": "sofia.castro@utec.edu.pe","contrasena": "hash_cb85d2b1c0714aa9","autorizacion": true},
+  {"id": "8a23777e-570a-4686-ad0d-ef0be4108563","correo": "carlos.lopez@gmail.com","contrasena": "hash_e1dc9730df164d7e","autorizacion": true},
+  {"id": "d44bdba6-7c23-4b35-a46b-a926f47833e8","correo": "luis.rodriguez@gmail.com","contrasena": "hash_e1d3e21003b44d90","autorizacion": true},
+  {"id": "ceca73a7-3fc2-4379-bc26-8a6d25758e84","correo": "jose.gonzalez@gmail.com","contrasena": "hash_5014edf5ee4647b1","autorizacion": false},
+  {"id": "5eb899c0-6c09-42c0-b830-bd159bfa81c2","correo": "valentina.ortiz@gmail.com","contrasena": "hash_2e37776eea1148a2","autorizacion": false},
+  {"id": "8ee61589-93f4-4e52-9d2b-1e7164f1cd75","correo": "carmen.fernandez@utec.edu.pe","contrasena": "hash_cf393f17e3d94184","autorizacion": false},
+  {"id": "3b9c94d1-f95f-4ff0-940f-b7675b4bed38","correo": "diego.morales@outlook.com","contrasena": "hash_e5f0830787194ef8","autorizacion": false},
+  {"id": "da7c5b38-48f9-4fa8-adc4-368a5325fe2e","correo": "jose.gonzalez@utec.edu.pe","contrasena": "hash_5f111e7055134e22","autorizacion": true},
+  {"id": "a2925bf4-f608-48fb-832c-3d56ee810bd8","correo": "miguel.torres@gmail.com","contrasena": "hash_41451b1212cb4e8e","autorizacion": false},
+  {"id": "081e26b0-aff5-4551-a5e0-1d863a5ebd53","correo": "andres.silva@gmail.com","contrasena": "hash_c531071d1e6f4495","autorizacion": true},
+  {"id": "0daaffff-a821-4013-ba22-e7d7d29c5da5","correo": "luis.rodriguez@utec.edu.pe","contrasena": "hash_887fb42d58204ee2","autorizacion": false},
+  {"id": "1565172c-2497-4e35-a2c4-7faabe79c428","correo": "sofia.castro@outlook.com","contrasena": "hash_6060186750ee4a30","autorizacion": true},
+  {"id": "d5304631-3e83-41f3-991b-25e708ff7e4c","correo": "patricia.ruiz@outlook.com","contrasena": "hash_76609d384b484de8","autorizacion": true},
+  {"id": "97390cb6-4e20-4814-a2be-b7e910057fa7","correo": "patricia.ruiz@utec.edu.pe","contrasena": "hash_abf587ad366b47e9","autorizacion": true},
+  {"id": "98493735-b6df-48ba-a4e7-d55063c1cc19","correo": "andres.silva@utec.edu.pe","contrasena": "hash_3a764d3cb58848df","autorizacion": true},
+  {"id": "04d6ec5e-1dfb-4dae-bc62-68b99c054136","correo": "valentina.ortiz@utec.edu.pe","contrasena": "hash_4186fe8ec04748bf","autorizacion": true},
+  {"id": "7481fc5d-e60c-4207-872f-912d271ce449","correo": "ana.martinez@utec.edu.pe","contrasena": "hash_aebb8406a85d4fe6","autorizacion": false}
+]
+
+const AUTH_STORAGE_KEY = 'tecsup_auth_user'
+
+export const authService = {
+  // Login
+  login(correo) {
+    const user = MOCK_USERS.find(u => u.correo === correo)
+    if (user) {
+      localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user))
+      return user
+    }
+    throw new Error('Usuario no encontrado')
+  },
+
+  // Logout
+  logout() {
+    localStorage.removeItem(AUTH_STORAGE_KEY)
+  },
+
+  // Get current user
+  getCurrentUser() {
+    const userStr = localStorage.getItem(AUTH_STORAGE_KEY)
+    return userStr ? JSON.parse(userStr) : null
+  },
+
+  // Check if user is authenticated
+  isAuthenticated() {
+    return !!this.getCurrentUser()
+  },
+
+  // Get all users (for selection)
+  getAllUsers() {
+    return MOCK_USERS
+  }
+}

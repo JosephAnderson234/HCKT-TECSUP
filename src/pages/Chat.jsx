@@ -1,19 +1,36 @@
 import { useState, useEffect, useRef } from 'react'
-import { botResponses, quickReplies, chatSuggestions } from '../data/mockData'
+import { quickReplies, chatSuggestions } from '../data/mockData'
+import { agentesAPI } from '../services/api'
+import { authService } from '../services/auth'
 import './Chat.css'
 
 function Chat() {
-  const [messages, setMessages] = useState([
-    { id: 1, text: 'Hola, soy tu asistente de apoyo. Estoy aquí para escucharte sin juicios. ¿Cómo estás hoy?', sender: 'bot', time: '10:30' },
-    { id: 2, text: 'He tenido una semana muy estresante con los exámenes.', sender: 'user', time: '10:31' },
-    { id: 3, text: 'Entiendo. Los exámenes pueden ser abrumadores. ¿Quieres hablar sobre qué es lo que más te preocupa?', sender: 'bot', time: '10:31' },
-    { id: 4, text: 'Siento que no voy a aprobar y eso me está causando mucha ansiedad.', sender: 'user', time: '10:32' }
-  ])
+  const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const [showQuickReplies, setShowQuickReplies] = useState(true)
   const [showSuggestions, setShowSuggestions] = useState(false)
+  const [selectedContext, setSelectedContext] = useState('Psicologo')
+  const [showContextMenu, setShowContextMenu] = useState(false)
   const messagesEndRef = useRef(null)
+  const currentUser = authService.getCurrentUser()
+
+  const contexts = [
+    { value: 'MentorAcademico', label: '🎓 Mentor Académico', color: '#667eea' },
+    { value: 'Psicologo', label: '🧠 Psicólogo', color: '#f093fb' },
+    { value: 'OrientadorVocacional', label: '🎯 Orientador Vocacional', color: '#4facfe' }
+  ]
+
+  useEffect(() => {
+    // Initial greeting
+    const greeting = {
+      id: Date.now(),
+      text: `Hola, soy tu ${contexts.find(c => c.value === selectedContext)?.label}. Estoy aquí para escucharte sin juicios. ¿Cómo puedo ayudarte hoy?`,
+      sender: 'bot',
+      time: getCurrentTime()
+    }
+    setMessages([greeting])
+  }, [selectedContext])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -28,8 +45,8 @@ function Chat() {
     return `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`
   }
 
-  const sendMessage = (text = input) => {
-    if (text.trim()) {
+  const sendMessage = async (text = input) => {
+    if (text.trim() && currentUser) {
       const userMessage = { id: Date.now(), text, sender: 'user', time: getCurrentTime() }
       setMessages(prev => [...prev, userMessage])
       setInput('')
@@ -42,18 +59,37 @@ function Chat() {
         navigator.vibrate(50)
       }
 
-      // Simular respuesta del bot
-      setTimeout(() => {
+      try {
+        const response = await agentesAPI.consultarAgente(
+          currentUser.correo,
+          selectedContext,
+          text
+        )
+
         setIsTyping(false)
-        const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)]
-        const botMessage = { id: Date.now() + 1, text: randomResponse, sender: 'bot', time: getCurrentTime() }
+        const botMessage = {
+          id: Date.now() + 1,
+          text: response.respuesta,
+          sender: 'bot',
+          time: getCurrentTime()
+        }
         setMessages(prev => [...prev, botMessage])
-        
+
         // Vibración para respuesta
         if (navigator.vibrate) {
           navigator.vibrate([30, 50, 30])
         }
-      }, 1500 + Math.random() * 1000)
+      } catch (error) {
+        setIsTyping(false)
+        const errorMessage = {
+          id: Date.now() + 1,
+          text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor intenta de nuevo.',
+          sender: 'bot',
+          time: getCurrentTime()
+        }
+        setMessages(prev => [...prev, errorMessage])
+        console.error('Error sending message:', error)
+      }
     }
   }
 
@@ -69,10 +105,31 @@ function Chat() {
   return (
     <div className="chat-page">
       <header className="chat-header">
-        <button className="back-btn">←</button>
-        <h1>Asistente de Apoyo</h1>
+        <button className="back-btn" onClick={() => window.history.back()}>←</button>
+        <div className="header-title" onClick={() => setShowContextMenu(!showContextMenu)}>
+          <h1>{contexts.find(c => c.value === selectedContext)?.label}</h1>
+          <span className="context-indicator">▼</span>
+        </div>
         <button className="menu-btn">⋮</button>
       </header>
+
+      {showContextMenu && (
+        <div className="context-menu">
+          {contexts.map(ctx => (
+            <button
+              key={ctx.value}
+              className={`context-option ${selectedContext === ctx.value ? 'active' : ''}`}
+              onClick={() => {
+                setSelectedContext(ctx.value)
+                setShowContextMenu(false)
+              }}
+              style={{ borderLeft: `4px solid ${ctx.color}` }}
+            >
+              {ctx.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="messages">
         {messages.map(msg => (

@@ -1,0 +1,2197 @@
+{
+	"info": {
+		"_postman_id": "cc626919-b56d-434f-a009-114e7fc3853d",
+		"name": "Tecsup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43509885",
+		"_collection_link": "https://dark-sunset-246817.postman.co/workspace/DBP~16941fd4-2fc3-45ac-91eb-0146a2c045ea/collection/43509885-cc626919-b56d-434f-a009-114e7fc3853d?action=share&source=collection_link&creator=43509885"
+	},
+	"item": [
+		{
+			"name": "API - TAREAS",
+			"item": [
+				{
+					"name": "Subir Tarea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Desktop/RDT_20251125_0046147894034036304879534.webp"
+								},
+								{
+									"key": "correo",
+									"value": "carmen.fernandez@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl_TAREAS}}/tareas",
+							"host": [
+								"{{baseUrl_TAREAS}}"
+							],
+							"path": [
+								"tareas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Desktop/RDT_20251125_0046147894034036304879534.webp"
+										},
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1536"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:19:32 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a8260-250735b177e69b124f26b3c8;Parent=073229a1da3556ee;Sampled=0;Lineage=1:cae980eb:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "26a6f46f-5394-4e79-86e5-a43ddd24f0f7"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UylPFEvLoAMEQYg="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "PIhH1wA3T4o9zzUFCRfint3vujv-N4G1ys9a4-UQMCEf4AaYLgk1Iw=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Tarea procesada y guardada exitosamente\",\n    \"data\": {\n        \"id\": \"55f5685e-3a0a-4668-b238-07e29da934a6\",\n        \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"texto\": \"In nature, poisonous creatures\\nhave bright coloring to warn\\nabout their toxicity.\\nJS\",\n        \"imagenUrl\": \"https://tareas-bucket-350b2efa.s3.amazonaws.com/tareas/73f56c3d-4f1b-4453-a47f-5899bf4ef172/55f5685e-3a0a-4668-b238-07e29da934a6.jpg?&Signature=7q%2BjLsRneP501%2Be%2F2QXt5d7mpRA%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEP7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCqoRzLsrBCUweIo%2Blf%2B%2Fn8d6nXk36SEoFYPvcI6%2Fxe%2BQIgIls9iZS1tRfDYmyu6VSv9PIrNLaIeYledNokLWsQfRkqjwMIxv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw0OTcyNzA0NjQwMjgiDC95k65VNXaXN2LQ9CrjAjyIk1VC3xH9ptVXbrLacehQlo6J8C4bpkgR1LfqQ25uZZXlorE8sCdPLWZt08neemScvCXV%2BZiYzDYErgJ0VJTmrfZ1xgYY8xNLzNrNd65J%2F1ZLkfFuLkBCRtdJZ3kN%2B1eRVyeU%2FWit22l7OibOMAfMvk8lIdjH7muPsKWCSKF16eX7Rq4x6nmspPolKpuu6pmRnKRP5lq2aXQf9wviPf%2FCKeJouEoBG%2FOLIimT%2FkEfMLXqbKGAwyTz5nmf%2BevGpYxTFdgZSM5KoVab%2BPMl64RLv3ULOoTm74LZDUZGymTnf9xMITt5lSirtf68hARU2buiH93YAD1AVS4DhRHjy4khX4yM%2B%2FjWdZzSEQ%2FXv8ODWlPv2nj4FmK9ypZi%2BVNZnppKzdJAIjprBuLRyhm3XEz6t6seg5M4Y2GbYmeZlMZSXYWrFItrd6FWEWU%2FeGzztT59LWiWzAIUaTSIizgxD2d6VoMw4ISqyQY6ngGfL0I9Al0h0505iSdSCMpH8G%2BNln%2FpR%2BP%2FGVkpYl0LNjHZD4EqKx7rQ3kJZnMllXWFfTcEIIbPvg5SGg6PWvHdvQ77gmqKnvu5V6XOjXhwexGlT4fUAlKBWWlIHqNPnVmyYcHm6o4QvNs3I3SLhPXzaNYskcJaK8vN%2FVWomuReKM2vDnN2ZGpESsgrW%2FQu%2BWqj8jGXWFwcpexWkUzNjQ%3D%3D&Expires=1764479972\"\n    }\n}"
+						},
+						{
+							"name": "Response 400 (sin correo)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Desktop/RDT_20251125_0046147894034036304879534.webp"
+										},
+										{
+											"key": "correo",
+											"value": "",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:19:59 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a827f-7975c0835b9954db73700daa;Parent=1d51d7ec9d4d9f25;Sampled=0;Lineage=1:cae980eb:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "1aa2a718-0b88-45ec-9c1c-9807c8729e31"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UylUBHojoAMEYNg="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "KSm2Omgv4vH5ZfqbcHThoRQ95PlbJ3udsE2S_H1M2aK4YilytgEKew=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El campo 'correo' es requerido en el formulario\"\n}"
+						},
+						{
+							"name": "Response 500 (sin imagen)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:20:19 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a8293-14fefb262861e7a75ff0eec6;Parent=0c24b802cfd3fed5;Sampled=0;Lineage=1:cae980eb:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "870b53c0-9a09-4523-965c-4bbe3278d847"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UylXIEVuoAMEiUQ="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "yqj8o1QFvq1WcpGIXRAW51QDKOv6UJb8zo78iPX-Ma0k-pHmeg8GoA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Provided image is not valid.', 'status': 'INVALID_ARGUMENT'}}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Listar tareas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl_TAREAS}}/tareas?correo=carmen.fernandez@gmail.com",
+							"host": [
+								"{{baseUrl_TAREAS}}"
+							],
+							"path": [
+								"tareas"
+							],
+							"query": [
+								{
+									"key": "correo",
+									"value": "carmen.fernandez@gmail.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas?correo=carmen.fernandez@gmail.com",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1674"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:20:47 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a82ae-128b2ba452c503b022b2af5b;Parent=11dfa2bbc8b72569;Sampled=0;Lineage=1:459367b8:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "22af869d-7d32-4e0a-91d9-0d9c35960b9a"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UylbRFurIAMEDAg="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "7PEFmy5vEcovATQrMRPSRMj2CD6MyLvTGlIioXP1TXry4sPI5FLy2Q=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Tareas obtenidas exitosamente\",\n    \"count\": 2,\n    \"data\": [\n        {\n            \"texto\": \"Entregar práctica 1\",\n            \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n            \"id\": \"2f4bc576-79c0-4822-94f0-f9817989ed47\"\n        },\n        {\n            \"texto\": \"In nature, poisonous creatures\\nhave bright coloring to warn\\nabout their toxicity.\\nJS\",\n            \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n            \"imagenUrl\": \"https://tareas-bucket-350b2efa.s3.amazonaws.com/tareas/73f56c3d-4f1b-4453-a47f-5899bf4ef172/55f5685e-3a0a-4668-b238-07e29da934a6.jpg?&Signature=7q%2BjLsRneP501%2Be%2F2QXt5d7mpRA%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEP7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCqoRzLsrBCUweIo%2Blf%2B%2Fn8d6nXk36SEoFYPvcI6%2Fxe%2BQIgIls9iZS1tRfDYmyu6VSv9PIrNLaIeYledNokLWsQfRkqjwMIxv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw0OTcyNzA0NjQwMjgiDC95k65VNXaXN2LQ9CrjAjyIk1VC3xH9ptVXbrLacehQlo6J8C4bpkgR1LfqQ25uZZXlorE8sCdPLWZt08neemScvCXV%2BZiYzDYErgJ0VJTmrfZ1xgYY8xNLzNrNd65J%2F1ZLkfFuLkBCRtdJZ3kN%2B1eRVyeU%2FWit22l7OibOMAfMvk8lIdjH7muPsKWCSKF16eX7Rq4x6nmspPolKpuu6pmRnKRP5lq2aXQf9wviPf%2FCKeJouEoBG%2FOLIimT%2FkEfMLXqbKGAwyTz5nmf%2BevGpYxTFdgZSM5KoVab%2BPMl64RLv3ULOoTm74LZDUZGymTnf9xMITt5lSirtf68hARU2buiH93YAD1AVS4DhRHjy4khX4yM%2B%2FjWdZzSEQ%2FXv8ODWlPv2nj4FmK9ypZi%2BVNZnppKzdJAIjprBuLRyhm3XEz6t6seg5M4Y2GbYmeZlMZSXYWrFItrd6FWEWU%2FeGzztT59LWiWzAIUaTSIizgxD2d6VoMw4ISqyQY6ngGfL0I9Al0h0505iSdSCMpH8G%2BNln%2FpR%2BP%2FGVkpYl0LNjHZD4EqKx7rQ3kJZnMllXWFfTcEIIbPvg5SGg6PWvHdvQ77gmqKnvu5V6XOjXhwexGlT4fUAlKBWWlIHqNPnVmyYcHm6o4QvNs3I3SLhPXzaNYskcJaK8vN%2FVWomuReKM2vDnN2ZGpESsgrW%2FQu%2BWqj8jGXWFwcpexWkUzNjQ%3D%3D&Expires=1764479972\",\n            \"id\": \"55f5685e-3a0a-4668-b238-07e29da934a6\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Response 400 (sin correo)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas?correo=",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:21:06 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a82c2-3ecf16cf45170c1b138bdd34;Parent=37f7f100f3c43c3b;Sampled=0;Lineage=1:459367b8:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "42ae9da0-e6f1-4bfb-bc36-9986c5627dcf"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UyleYEoCIAMEPgw="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "BZuJiJnhA6fW-rETtGXwP-kAEh3Aj-PPUUC6UkuZpJTpJo50cUJe1g=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El parámetro 'correo' es requerido en query string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Tarea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=carmen.fernandez@gmail.com",
+							"host": [
+								"{{baseUrl_TAREAS}}"
+							],
+							"path": [
+								"tareas",
+								":id"
+							],
+							"query": [
+								{
+									"key": "correo",
+									"value": "carmen.fernandez@gmail.com"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "55f5685e-3a0a-4668-b238-07e29da934a6"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 404 (no encontrado)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=carmen.fernandez@gmail.com",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas",
+										":id"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "748604cc-778d-4795-ad9e-677b0f32dfab"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:21:21 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a82d0-3b4824ce3dd751980a16304a;Parent=4052a8f498e68996;Sampled=0;Lineage=1:c101845b:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "c63ed252-98d9-450f-a051-dd4586a944cc"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UylgnGuMIAMElOg="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "ogOD7RhoDNJEV9b1h2zh6ljFWFCbl5KWQ9Y-3dZhImlTaI0HijIOBg=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Tarea no encontrada\"\n}"
+						},
+						{
+							"name": "Resposne 200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=carmen.fernandez@gmail.com",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas",
+										":id"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "55f5685e-3a0a-4668-b238-07e29da934a6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1524"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:23:07 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a833b-3f3c985602503d067bf624ec;Parent=6f57f3a9ed9f8011;Sampled=0;Lineage=1:c101845b:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "6a06974f-58ad-4d8b-9182-bca79acbb724"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UylxSEQKIAMEoDA="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "oe5TVusDxI4wTaoRfWXNg4ojvNwhhx_8kxtTsS7FYHXkaAV1FDRs_w=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Tarea obtenida exitosamente\",\n    \"data\": {\n        \"texto\": \"In nature, poisonous creatures\\nhave bright coloring to warn\\nabout their toxicity.\\nJS\",\n        \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"imagenUrl\": \"https://tareas-bucket-350b2efa.s3.amazonaws.com/tareas/73f56c3d-4f1b-4453-a47f-5899bf4ef172/55f5685e-3a0a-4668-b238-07e29da934a6.jpg?&Signature=7q%2BjLsRneP501%2Be%2F2QXt5d7mpRA%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEP7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCqoRzLsrBCUweIo%2Blf%2B%2Fn8d6nXk36SEoFYPvcI6%2Fxe%2BQIgIls9iZS1tRfDYmyu6VSv9PIrNLaIeYledNokLWsQfRkqjwMIxv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw0OTcyNzA0NjQwMjgiDC95k65VNXaXN2LQ9CrjAjyIk1VC3xH9ptVXbrLacehQlo6J8C4bpkgR1LfqQ25uZZXlorE8sCdPLWZt08neemScvCXV%2BZiYzDYErgJ0VJTmrfZ1xgYY8xNLzNrNd65J%2F1ZLkfFuLkBCRtdJZ3kN%2B1eRVyeU%2FWit22l7OibOMAfMvk8lIdjH7muPsKWCSKF16eX7Rq4x6nmspPolKpuu6pmRnKRP5lq2aXQf9wviPf%2FCKeJouEoBG%2FOLIimT%2FkEfMLXqbKGAwyTz5nmf%2BevGpYxTFdgZSM5KoVab%2BPMl64RLv3ULOoTm74LZDUZGymTnf9xMITt5lSirtf68hARU2buiH93YAD1AVS4DhRHjy4khX4yM%2B%2FjWdZzSEQ%2FXv8ODWlPv2nj4FmK9ypZi%2BVNZnppKzdJAIjprBuLRyhm3XEz6t6seg5M4Y2GbYmeZlMZSXYWrFItrd6FWEWU%2FeGzztT59LWiWzAIUaTSIizgxD2d6VoMw4ISqyQY6ngGfL0I9Al0h0505iSdSCMpH8G%2BNln%2FpR%2BP%2FGVkpYl0LNjHZD4EqKx7rQ3kJZnMllXWFfTcEIIbPvg5SGg6PWvHdvQ77gmqKnvu5V6XOjXhwexGlT4fUAlKBWWlIHqNPnVmyYcHm6o4QvNs3I3SLhPXzaNYskcJaK8vN%2FVWomuReKM2vDnN2ZGpESsgrW%2FQu%2BWqj8jGXWFwcpexWkUzNjQ%3D%3D&Expires=1764479972\",\n        \"id\": \"55f5685e-3a0a-4668-b238-07e29da934a6\"\n    }\n}"
+						},
+						{
+							"name": "Response 400 (sin correo)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas",
+										":id"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "55f5685e-3a0a-4668-b238-07e29da934a6"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:23:26 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a834e-236453b20f909a582ce353cf;Parent=5b36d8f28f3f9917;Sampled=0;Lineage=1:c101845b:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "ab3a0ccb-05c9-475e-abd9-df747faef915"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "Uyl0WHLNIAMEg4Q="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 4e20c5def0b36a72867525b85b1d09f8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "dCFdJwMIVmV_l_cQYZ8lqhKo9cDsV8Qlq8_qoHDjroBmoj3WPYxR_Q=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El parámetro 'correo' es requerido en query string\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Actualizar Tarea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ADMIN/Desktop/RDT_20251125_0046147894034036304879534.webp"
+								},
+								{
+									"key": "correo",
+									"value": "carmen.fernandez@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "fa2200fe-bbd8-4b9c-930b-23ae9b4f5ce5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl_TAREAS}}/tareas",
+							"host": [
+								"{{baseUrl_TAREAS}}"
+							],
+							"path": [
+								"tareas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Desktop/RDT_20251125_0046147894034036304879534.webp"
+										},
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "fa2200fe-bbd8-4b9c-930b-23ae9b4f5ce5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1529"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:45:29 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a8877-7561b0e1499949f222e987bb;Parent=4c21707b4e720e9e;Sampled=0;Lineage=1:b8f4444c:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "196a002e-3d2f-46e5-ba94-d11ff64f1f4e"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UypCyE5rIAMEigA="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 105834427be60722184a9403ff79e644.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "gFi6XatfymgQ6mPPOxK6f8dkWm8T7Crcl5kdkll8fZ9KbIYGiFx9Og=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Tarea actualizada exitosamente\",\n    \"data\": {\n        \"imagenUrl\": \"https://tareas-bucket-350b2efa.s3.amazonaws.com/tareas/73f56c3d-4f1b-4453-a47f-5899bf4ef172/fa2200fe-bbd8-4b9c-930b-23ae9b4f5ce5.jpg?&Signature=14NZVjcD6Th%2BEcCmp3YsAHdHZ%2B0%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEP7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCRBwmQp6uU0Z4kr5m5sLTN8F9eOhJSpHvZ1r5PnY8KvAIgEC0bp3mFJwMzFPK5hxqo%2F%2F2TxSpPrIUqSOfxEDtlC%2BcqmgMIx%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw0OTcyNzA0NjQwMjgiDDYqNCNN3acLvHdneyruAi3xioGXGFoUZRuRx%2FW5Hk%2FBPIXuwRgA27sAAPsMNCDGYS64BMSfhpYqYOt1IQsNy2TL9FzOx6l9X59BsUpWqWdUNWs6BgKFpr0VWF5rYLx0Wafm92ad28ctc%2Bwb1pIGiQO2C4%2FgEFW1AI7AoOdM7xgkCQVcabRnuUEl3JB8yHym07nTMoLa2DQFlynlSrnViJJnA3LpDmrb9%2BaeBmELXu6%2BtfIQQG4dS2zdbdhFY4NEtgy1lkd6i4uvQE%2Bi72DLGdaPcBl7Cl5FaQzMCXIHGvAmpuo87KU5tqa%2BkwTmlJSHuGXVsZdMI%2FfqwPhloLEhCFbycXb%2BmjjDKLm%2BjgnlbLWRK3f19EV%2BljLKFHIKj1dHKQIjnTtN53wseQbCQ4z3zbBQ6s%2FbY1azZEUEqDP6vJW%2BHUfSMBi1%2FzHWebVN0Iau71vBgdEzKJvGyeY8ehH0mcn1V8rnkg5qCJarrSDqU%2Buplw8t4JA4eQi8cYFsQTDkkKrJBjqdARFPv2wUoIEqENcfWgpcuzQXshz4ZdM%2BkoK6GRFX2aSsTJ3jimHDLuXCYNToA7QVgapddgfFC1njqd1jfSpkjwArvACAqjdLsmCzH8%2FVMEq0m0xkQb9%2B3ygSvR2HlMxr7pw4Uj3OYlcziephdxqLXtyzUWyNCusDeHJv1mh6r8O7fJ1JfEkl5bQFuEhThQGCOHTB22JMZyZEce8p8nk%3D&Expires=1764481529\",\n        \"texto\": \"In nature, poisonous creatures\\nhave bright coloring to warn\\nabout their toxicity.\\nJS\",\n        \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"id\": \"fa2200fe-bbd8-4b9c-930b-23ae9b4f5ce5\"\n    }\n}"
+						},
+						{
+							"name": "Response 400",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Desktop/RDT_20251125_0046147894034036304879534.webp"
+										},
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:45:53 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a8891-5c48c2f23597f52e4f55562a;Parent=6e4653cc991a05e7;Sampled=0;Lineage=1:b8f4444c:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "4727cb56-9687-467c-ae37-a81a555fb80d"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UypGwGpRoAMEWkw="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 105834427be60722184a9403ff79e644.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "FYTNcFNtLRZdYGXWR_8vQqgYZku_s-RznEd76wMd0qBDRUxQzfvpSg=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El campo 'id' no puede estar vacío\"\n}"
+						},
+						{
+							"name": "Response 400",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/ADMIN/Desktop/RDT_20251125_0046147894034036304879534.webp"
+										},
+										{
+											"key": "correo",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "fa2200fe-bbd8-4b9c-930b-23ae9b4f5ce5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:46:06 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a889e-4f45969377f77aab7d340232;Parent=7abf3a0a4a56b061;Sampled=0;Lineage=1:b8f4444c:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "11e8a40a-28c9-4abc-839b-3f93fafa662f"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UypI5EVnoAMEjNw="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 105834427be60722184a9403ff79e644.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "3Bi-ogYKOjKtPckHpsNCYbVXJpn4g-jY3t5gCRmMs7ZoBtNuTla7SA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El campo 'correo' es requerido\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar Tarea",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=carmen.fernandez@gmail.com",
+							"host": [
+								"{{baseUrl_TAREAS}}"
+							],
+							"path": [
+								"tareas",
+								":id"
+							],
+							"query": [
+								{
+									"key": "correo",
+									"value": "carmen.fernandez@gmail.com"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "55f5685e-3a0a-4668-b238-07e29da934a6"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=carmen.fernandez@gmail.com",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas",
+										":id"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "748604cc-778d-4795-ad9e-677b0f32dfab"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:26:55 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a841e-2b8cd8546d81c22f6325eaf7;Parent=22aa6a6a7ac17ccb;Sampled=0;Lineage=1:3e5ea9d8:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "bd01046a-cf8e-413e-b02a-6d53e581b08a"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UymU5GCWIAMEB9Q="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 a61b5769585b4942bd3ae6df764dcab8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "5ivmRMSOkx4RvpS4FcwGFzx_DKWV5iTqRPO4xFEpkEqsG1Cc_0bROA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Tarea no encontrada\"\n}"
+						},
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=carmen.fernandez@gmail.com",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas",
+										":id"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "55f5685e-3a0a-4668-b238-07e29da934a6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:27:17 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a8435-21fc532012b4e6ca6a63e2f0;Parent=05654d9f7db7e17d;Sampled=0;Lineage=1:3e5ea9d8:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "14e094c6-00d0-41b6-b642-a9922f94d862"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UymYaHlNoAMEuYw="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 a61b5769585b4942bd3ae6df764dcab8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "V1QAEZN5PN6cFr-YojfdL1Se7VzyRd0dqSCdgKCUmOcdMZ-xun4LdA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Tarea eliminada exitosamente\",\n    \"tarea_id\": \"55f5685e-3a0a-4668-b238-07e29da934a6\"\n}"
+						},
+						{
+							"name": "Response 400",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_TAREAS}}/tareas/:id?correo=",
+									"host": [
+										"{{baseUrl_TAREAS}}"
+									],
+									"path": [
+										"tareas",
+										":id"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "55f5685e-3a0a-4668-b238-07e29da934a6"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 05:27:33 GMT"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692a8445-0094cbd43f62b9196420d628;Parent=4e7e61afe80bfcc4;Sampled=0;Lineage=1:3e5ea9d8:0"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "e0d63974-d9bc-4034-ac79-1b11eae090d6"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "Uyma-HajoAMEMMQ="
+								},
+								{
+									"key": "X-Cache",
+									"value": "Error from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 a61b5769585b4942bd3ae6df764dcab8.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "eZIUYeoDlW1CwMu9tPQjymAuNp7Aqf1CL1CGwisPrqP68lCGP0ToNA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El parámetro 'correo' es requerido (query string o body)\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API - AGENTE",
+			"item": [
+				{
+					"name": "Consultar Agente - Mentor Academico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"contexto\": \"MentorAcademico\",\r\n  \"mensaje\": \"¿Cómo puedo mejorar mi promedio?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl_AGENTES}}/agente/consultar",
+							"host": [
+								"{{baseUrl_AGENTES}}"
+							],
+							"path": [
+								"agente",
+								"consultar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"contexto\": \"MentorAcademico\",\r\n  \"mensaje\": \"¿Cómo puedo mejorar mi promedio?\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_AGENTES}}/agente/consultar",
+									"host": [
+										"{{baseUrl_AGENTES}}"
+									],
+									"path": [
+										"agente",
+										"consultar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2635"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 07:29:47 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "47aa1112-9c5e-40df-b2f5-a8de1a30bfc3"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "Uy4TjF20oAMEmkQ="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692aa0e3-05f406f25e03d51469ee2544;Parent=1534426377de0c66;Sampled=0;Lineage=1:242bd069:0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 94d34b5f3784762378f4530207128fe6.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "U6OivJw6CINtndGnrmH1WXhBpN7KunYu90FJSWyq9zsCmQIjlec95A=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"respuesta\": \"¡Hola! Entiendo que quieres mejorar tu promedio, ¡excelente objetivo! Veo que tienes un promedio ponderado de 15.86 en Ingeniería de Software. Para subirlo, podemos trabajar en varias estrategias.\\n\\nPrimero, analicemos la situación actual. Tienes 17 créditos desaprobados y has reprobado los cursos CUR424, CUR373 y CUR341. Estos cursos están afectando tu promedio. También veo que tu asistencia promedio es de 53.7%, lo cual podría ser un factor importante.\\n\\nAquí te propongo algunas ideas para mejorar tu promedio:\\n\\n1.  **Identificar las causas de las notas bajas:** ¿Por qué reprobaste esos cursos? ¿Falta de comprensión de los temas? ¿Problemas con la gestión del tiempo? ¿Dificultad con el estilo de enseñanza? Entender las razones te ayudará a evitar repetir los mismos errores.\\n\\n2.  **Priorizar los cursos actuales:** Enfócate en obtener buenas calificaciones en los cursos que estás cursando actualmente. Un buen desempeño en estos cursos tendrá un impacto inmediato en tu promedio.\\n\\n3.  **Recuperar los cursos reprobados:** Averigua si puedes volver a tomar los cursos CUR424, CUR373 y CUR341. Considera reforzarlos con tutorías o grupos de estudio. Aprobar estos cursos eliminará las notas bajas de tu historial y mejorará significativamente tu promedio.\\n\\n4.  **Mejorar la asistencia:** La asistencia a clases es fundamental para comprender los temas y participar activamente en el aprendizaje. Intenta asistir a todas las clases y participa en las discusiones.\\n\\n5.  **Optimizar tu estudio:** ¿Cómo estás estudiando actualmente? ¿Usas técnicas de estudio efectivas? Podríamos explorar diferentes métodos de estudio, como la técnica Pomodoro, mapas mentales, o el estudio espaciado, para encontrar los que mejor se adapten a ti.\\n\\n6.  **Gestionar el tiempo:** Veo que tienes 4 tareas pendientes. Organiza tu tiempo para completar estas tareas y evitar el estrés de último minuto. Utiliza un calendario o una aplicación de gestión de tareas para mantenerte al día.\\n\\n7.  **Buscar ayuda:** No dudes en buscar ayuda de tus profesores, compañeros, o tutores. A veces, una perspectiva diferente puede ayudarte a comprender un tema que te resulta difícil.\\n\\n¿Qué te parecen estas ideas? ¿Cuál de ellas te parece más relevante para empezar a trabajar? Podemos profundizar en cada una de ellas para crear un plan de acción personalizado. ¡Estoy aquí para apoyarte en el proceso!\\n\",\n    \"contexto\": \"MentorAcademico\",\n    \"timestamp\": \"2025-11-29T07:29:47.346290\",\n    \"usuario\": {\n        \"correo\": \"carmen.fernandez@gmail.com\",\n        \"id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Consultar Agente - Psicologo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"contexto\": \"Psicologo\",\r\n  \"mensaje\": \"Me he estado sintiendo estresado/ansioso con mis estudios. ¿Podemos hablar sobre lo que estoy pasando?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl_AGENTES}}/agente/consultar",
+							"host": [
+								"{{baseUrl_AGENTES}}"
+							],
+							"path": [
+								"agente",
+								"consultar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"contexto\": \"Psicologo\",\r\n  \"mensaje\": \"Me he estado sintiendo estresado/ansioso con mis estudios. ¿Podemos hablar sobre lo que estoy pasando?\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_AGENTES}}/agente/consultar",
+									"host": [
+										"{{baseUrl_AGENTES}}"
+									],
+									"path": [
+										"agente",
+										"consultar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\r\n    \"respuesta\": \"Hola Carmen, gracias por compartir esto conmigo. Entiendo que te has estado sintiendo estresada y ansiosa con tus estudios, y quiero que sepas que estoy aquí para escucharte y apoyarte. Es valiente de tu parte reconocerlo y buscar ayuda.\\n\\nCuéntame, ¿qué es lo que te está generando este estrés y ansiedad específicamente? ¿Hay algo en particular que te preocupe o te abrume? No te preocupes por ser perfecta al explicarlo, solo habla desde el corazón. Estoy aquí para escucharte sin juzgar.\\n\\nPor lo que veo en tu información, estás en el ciclo 7 de Ingeniería de Software. Además, noto que tienes 3 cursos reprobados y un avance de malla del 11.6%, lo que podría estar generando presión. También veo que tu asistencia no es muy alta (53.7%). Sin embargo, también veo que dedicas bastante tiempo al estudio (32.9 horas semanales) y que participas en actividades extracurriculares, lo cual es positivo.\\n\\nEs importante recordar que el estrés y la ansiedad son respuestas comunes a la presión académica, especialmente en carreras exigentes como Ingeniería de Software. No estás sola en esto.\\n\\n¿Qué te parece si empezamos por identificar las principales fuentes de tu estrés y ansiedad? A partir de ahí, podemos explorar estrategias para afrontarlo y manejarlo de manera más efectiva.\\n\",\r\n    \"contexto\": \"Psicologo\",\r\n    \"timestamp\": \"2025-11-29T08:00:21.748731\",\r\n    \"usuario\": {\r\n        \"correo\": \"carmen.fernandez@gmail.com\",\r\n        \"id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Consultar Agente - OrientadorVocacional",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"contexto\": \"OrientadorVocacional\",\r\n  \"mensaje\": \"No estoy seguro si la carrera que estudio es la correcta para mí. ¿Podrías ayudarme a orientarme?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl_AGENTES}}/agente/consultar",
+							"host": [
+								"{{baseUrl_AGENTES}}"
+							],
+							"path": [
+								"agente",
+								"consultar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"contexto\": \"OrientadorVocacional\",\r\n  \"mensaje\": \"No estoy seguro si la carrera que estudio es la correcta para mí. ¿Podrías ayudarme a orientarme?\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_AGENTES}}/agente/consultar",
+									"host": [
+										"{{baseUrl_AGENTES}}"
+									],
+									"path": [
+										"agente",
+										"consultar"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"respuesta\": \"Hola. Entiendo tu inquietud. Es común tener dudas sobre la elección de carrera, especialmente cuando uno avanza en los estudios. Con gusto te ayudaré a explorar tus opciones y a reflexionar sobre si Ingeniería de Software es el camino correcto para ti.\\n\\nPara empezar, me gustaría entender un poco mejor por qué te sientes inseguro. ¿Hay algo en particular que te haga dudar? ¿Qué aspectos de la carrera te gustan y cuáles no tanto? \\n\\nAdemás, considerando tu promedio de 15.86 y que has tenido algunas dificultades en 3 cursos y has retirado otros 3, ¿sientes que la carrera te está resultando desafiante en exceso o que no estás conectando con los contenidos?\\n\\nTambién me gustaría saber un poco más sobre tus intereses y habilidades. ¿Qué te apasiona hacer en tu tiempo libre? ¿En qué áreas te consideras bueno? ¿Qué tipo de problemas te gusta resolver?\\n\\nCuéntame un poco más sobre esto y así podré ofrecerte una orientación más personalizada.\\n\",\r\n    \"contexto\": \"OrientadorVocacional\",\r\n    \"timestamp\": \"2025-11-29T07:34:09.464613\",\r\n    \"usuario\": {\r\n        \"correo\": \"carmen.fernandez@gmail.com\",\r\n        \"id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Tooggle de autorización",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"autorizacion\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl_AGENTES}}/usuario/autorizacion",
+							"host": [
+								"{{baseUrl_AGENTES}}"
+							],
+							"path": [
+								"usuario",
+								"autorizacion"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"autorizacion\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_AGENTES}}/usuario/autorizacion",
+									"host": [
+										"{{baseUrl_AGENTES}}"
+									],
+									"path": [
+										"usuario",
+										"autorizacion"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "285"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 08:26:53 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "e63cd755-5e5f-4d24-bcc0-202d2f7a5509"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UzAr8G_yIAMEr6A="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692aae4c-535c39e629611cb41add216d;Parent=28c7a05826028c07;Sampled=0;Lineage=1:3455a93a:0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 13bdfe51c955b72c24c041717e9e9508.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "RhWbKH_xb7xCRaUVElG_LUbsmnBFiyE7KWXOs-FGyVeq9ZDW-hI81Q=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Autorización activada. Ahora puedes usar los agentes académicos.\",\n    \"correo\": \"carmen.fernandez@gmail.com\",\n    \"autorizacion\": true,\n    \"timestamp\": \"2025-11-29T08:26:53.967595\",\n    \"usuario\": {\n        \"id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"correo\": \"carmen.fernandez@gmail.com\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "API - ANALISIS",
+			"item": [
+				{
+					"name": "ListarUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl_ANALISIS}}/usuarios",
+							"host": [
+								"{{baseUrl_ANALISIS}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_ANALISIS}}/usuarios",
+									"host": [
+										"{{baseUrl_ANALISIS}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3283"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 09:51:58 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "706189e0-4791-4a97-bccc-512006267b9c"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UzNJmHkPIAMEHzA="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692ac23d-6129ee964d03626737fc4a9f;Parent=067cab2fda49057b;Sampled=0;Lineage=1:5dad12e4:0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 72af6577499f2f531d3d559f296edbbc.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "PuauLjgKxoQvcPPa6JlE0stO-3HRawBb6KqYCPdlUtPwmopj0upuCw=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"usuarios\": [\n        {\n            \"correo\": \"ana.martinez@gmail.com\",\n            \"id\": \"674e80c0-3d81-41c1-bd4b-d873cda2ad7c\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"ana.martinez@utec.edu.pe\",\n            \"id\": \"7481fc5d-e60c-4207-872f-912d271ce449\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"andres.silva@gmail.com\",\n            \"id\": \"081e26b0-aff5-4551-a5e0-1d863a5ebd53\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"andres.silva@utec.edu.pe\",\n            \"id\": \"98493735-b6df-48ba-a4e7-d55063c1cc19\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"camila.rojas@gmail.com\",\n            \"id\": \"adb32e9c-413d-4de0-a2c0-01062ce9afa9\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"carlos.lopez@gmail.com\",\n            \"id\": \"8a23777e-570a-4686-ad0d-ef0be4108563\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"carlos.lopez@outlook.com\",\n            \"id\": \"5e4de0b3-a543-4ea3-8d4e-daebcaeadc04\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"carlos.lopez@utec.edu.pe\",\n            \"id\": \"ade2081c-e7cf-480a-987a-d2e557f5a9f4\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"carmen.fernandez@gmail.com\",\n            \"id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"carmen.fernandez@utec.edu.pe\",\n            \"id\": \"8ee61589-93f4-4e52-9d2b-1e7164f1cd75\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"diego.morales@gmail.com\",\n            \"id\": \"a2f43455-14f2-442b-a5ec-b542ad120f82\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"diego.morales@outlook.com\",\n            \"id\": \"3b9c94d1-f95f-4ff0-940f-b7675b4bed38\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"fernando.vega@outlook.com\",\n            \"id\": \"ae5959ee-b57c-4607-8edb-879c04e421a6\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"jose.gonzalez@gmail.com\",\n            \"id\": \"ceca73a7-3fc2-4379-bc26-8a6d25758e84\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"jose.gonzalez@utec.edu.pe\",\n            \"id\": \"da7c5b38-48f9-4fa8-adc4-368a5325fe2e\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"laura.sanchez@utec.edu.pe\",\n            \"id\": \"b54a3ca2-96a6-4dbb-8af4-eaeaf43d4cd4\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"luis.rodriguez@gmail.com\",\n            \"id\": \"d44bdba6-7c23-4b35-a46b-a926f47833e8\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"luis.rodriguez@utec.edu.pe\",\n            \"id\": \"0daaffff-a821-4013-ba22-e7d7d29c5da5\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"magali.flores@outlook.com\",\n            \"id\": \"41a1fc6f-3621-4a2a-bdc5-61ca363762a1\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"maria.garcia@utec.edu.pe\",\n            \"id\": \"a497d4cb-2a7e-4d63-ac9b-14d48bb18fdc\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"miguel.torres@gmail.com\",\n            \"id\": \"a2925bf4-f608-48fb-832c-3d56ee810bd8\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"patricia.ruiz@outlook.com\",\n            \"id\": \"d5304631-3e83-41f3-991b-25e708ff7e4c\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"patricia.ruiz@utec.edu.pe\",\n            \"id\": \"97390cb6-4e20-4814-a2be-b7e910057fa7\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"pedro.flores@outlook.com\",\n            \"id\": \"332b6807-22ba-4d0c-be8e-6a3716f176c7\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"roberto.diaz@outlook.com\",\n            \"id\": \"67130e36-33c6-418b-abc2-c81302e0dee5\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"sofia.castro@gmail.com\",\n            \"id\": \"24ce67ab-371a-40af-a676-36f3cac21cc9\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"sofia.castro@outlook.com\",\n            \"id\": \"1565172c-2497-4e35-a2c4-7faabe79c428\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"sofia.castro@utec.edu.pe\",\n            \"id\": \"5e57e2b5-1891-4131-a2be-06dff9987e95\",\n            \"autorizacion\": true\n        },\n        {\n            \"correo\": \"valentina.ortiz@gmail.com\",\n            \"id\": \"5eb899c0-6c09-42c0-b830-bd159bfa81c2\",\n            \"autorizacion\": false\n        },\n        {\n            \"correo\": \"valentina.ortiz@utec.edu.pe\",\n            \"id\": \"04d6ec5e-1dfb-4dae-bc62-68b99c054136\",\n            \"autorizacion\": true\n        }\n    ],\n    \"total\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl_ANALISIS}}/usuario?correo=carmen.fernandez@gmail.com",
+							"host": [
+								"{{baseUrl_ANALISIS}}"
+							],
+							"path": [
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "correo",
+									"value": "carmen.fernandez@gmail.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_ANALISIS}}/usuario?correo=carmen.fernandez@gmail.com",
+									"host": [
+										"{{baseUrl_ANALISIS}}"
+									],
+									"path": [
+										"usuario"
+									],
+									"query": [
+										{
+											"key": "correo",
+											"value": "carmen.fernandez@gmail.com"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1284"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 10:11:26 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "38a9adb8-3f05-480b-a386-00421f9d855a"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UzQACEXnIAMEZpQ="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692ac6cc-7802c3071460db0f418e391c;Parent=32645aa0570c2acf;Sampled=0;Lineage=1:56e25058:0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 5412cb5252fe365064e8ffded799091a.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "RjqvhLy3hsqXprvimP7DtI6uDQoMf6qELjnFBQpJb7Yctp6e3AZNwA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"usuario\": {\n        \"correo\": \"carmen.fernandez@gmail.com\",\n        \"id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"contrasena\": \"hash_358e9e42de7742b0\",\n        \"autorizacion\": true\n    },\n    \"datos_academicos\": {\n        \"creditos_desaprobados\": 17,\n        \"ciclo_actual\": 7,\n        \"estado_matricula\": \"MATRICULADO\",\n        \"creditos_aprobados\": 186,\n        \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"historial_retirados\": [\n            {\n                \"periodo\": \"2022-I\",\n                \"curso\": \"CUR334\"\n            },\n            {\n                \"periodo\": \"2022-II\",\n                \"curso\": \"CUR426\"\n            },\n            {\n                \"periodo\": \"2017-II\",\n                \"curso\": \"CUR240\"\n            }\n        ],\n        \"asistencia_promedio\": 53.71,\n        \"promedio_ponderado\": 15.86,\n        \"cursos_reprobados\": [\n            \"CUR424\",\n            \"CUR373\",\n            \"CUR341\"\n        ],\n        \"carrera\": \"Ingeniería de Software\",\n        \"avance_malla\": 11.58,\n        \"id\": \"7e9da856-0b2a-4135-b2d6-ab24042bfeb0\"\n    },\n    \"datos_emocionales\": {\n        \"frecuencia_acceso_plataforma\": \"NUNCA\",\n        \"actividades_extracurriculares\": true,\n        \"horas_estudio_estimadas\": 32.9,\n        \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"uso_servicios_tutoria\": \"NUNCA\",\n        \"uso_servicios_psicologia\": \"REGULAR\",\n        \"id\": \"bedea773-5ce8-49c1-845a-e1b277bb3ce5\"\n    },\n    \"datos_socioeconomicos\": {\n        \"situacion_laboral\": \"NO_TRABAJA\",\n        \"dependencia_economica\": false,\n        \"ingreso_estimado\": 1411.36,\n        \"tipo_financiamiento\": \"BECA\",\n        \"usuarioId\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n        \"id\": \"605cb01b-3a4d-4d15-b61a-a89ffe7efaa9\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"usuario\": {\r\n    \"autorizacion\": true\r\n  },\r\n  \"datos_academicos\": {\r\n    \"promedio_ponderado\": 14.5,\r\n    \"asistencia_promedio\": 90.0\r\n  },\r\n  \"datos_emocionales\": {\r\n    \"horas_estudio_estimadas\": 20.0\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl_ANALISIS}}/usuario",
+							"host": [
+								"{{baseUrl_ANALISIS}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"usuario\": {\r\n    \"autorizacion\": true\r\n  },\r\n  \"datos_academicos\": {\r\n    \"promedio_ponderado\": 14.5,\r\n    \"asistencia_promedio\": 90.0\r\n  },\r\n  \"datos_emocionales\": {\r\n    \"horas_estudio_estimadas\": 20.0\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_ANALISIS}}/usuario",
+									"host": [
+										"{{baseUrl_ANALISIS}}"
+									],
+									"path": [
+										"usuario"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 10:11:48 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "fb3c1d5e-ef6e-4360-8f1a-02cb61c340aa"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UzQDhGmfIAMEQKw="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692ac6e2-7c4faa335373feb5670f808f;Parent=4ab9561a3d755606;Sampled=0;Lineage=1:afc94f57:0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 5412cb5252fe365064e8ffded799091a.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "12AuYUgioyIibYLKw8LqBFzWUtBq2peK_Ozvqt2-nVYTG7Izi_se3w=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Usuario actualizado exitosamente\",\n    \"correo\": \"carmen.fernandez@gmail.com\",\n    \"usuario_id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\",\n    \"tablas_actualizadas\": [\n        \"usuario\",\n        \"datos_academicos\",\n        \"datos_emocionales\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Analizar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"mensaje\": \"¿Qué opinas sobre este estudiante?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl_ANALISIS}}/analisis/usuario",
+							"host": [
+								"{{baseUrl_ANALISIS}}"
+							],
+							"path": [
+								"analisis",
+								"usuario"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"correo\": \"carmen.fernandez@gmail.com\",\r\n  \"mensaje\": \"¿Qué opinas sobre este estudiante?\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl_ANALISIS}}/analisis/usuario",
+									"host": [
+										"{{baseUrl_ANALISIS}}"
+									],
+									"path": [
+										"analisis",
+										"usuario"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1780"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 10:12:14 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "4640d735-d1e8-40e0-adc1-c146985eceff"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "UzQGxEYAoAMEXMg="
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-692ac6f7-77e95afd163975d932842ceb;Parent=0c153b13b5375ad0;Sampled=0;Lineage=1:f4f0301b:0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 5412cb5252fe365064e8ffded799091a.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "LIM50-P3"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "rRP8SED--dycYJVutd8ztt9sHx9YDLwFpYPADRmxU-_ppxIYYOhYxg=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"riesgo_desercion\": 52,\n    \"nivel_riesgo\": \"MEDIO\",\n    \"mensaje\": \"Carmen presenta un riesgo medio de deserción. Si bien su promedio ponderado es alto y su asistencia es buena, lo que indica un buen desempeño académico en general, existen varios factores que elevan su riesgo. Particularmente preocupante es su nula interacción con la plataforma virtual del curso y el alto número de créditos desaprobados, junto con un historial de retiros considerable, sugieren posibles dificultades en la gestión de su carga académica o problemas de adaptación. Adicionalmente, aunque no trabaje, el bajo avance de malla curricular podría generar frustración y desmotivación. Es importante abordar estas áreas para asegurar su éxito académico a largo plazo.\",\n    \"factores_riesgo\": [\n        \"Frecuencia de acceso a la plataforma: NUNCA\",\n        \"Créditos desaprobados: 17\",\n        \"Historial de retiros: 3\",\n        \"Avance de malla curricular bajo: 11.6%\"\n    ],\n    \"factores_protectores\": [\n        \"Promedio ponderado: 14.50\",\n        \"Asistencia promedio: 90.0%\",\n        \"Tipo de financiamiento: BECA\",\n        \"Actividades extracurriculares: Sí\",\n        \"No trabaja\"\n    ],\n    \"recomendaciones\": [\n        \"Implementar un plan de apoyo académico enfocado en las materias donde ha tenido dificultades, considerando la posibilidad de tutorías personalizadas.\",\n        \"Fomentar la participación activa en la plataforma virtual a través de estrategias de gamificación o incentivos para aumentar su interacción.\",\n        \"Ofrecer asesoramiento vocacional y orientación para ayudar a Carmen a reafirmar su elección de carrera y establecer metas realistas.\",\n        \"Realizar un seguimiento continuo de su progreso académico y emocional para identificar y abordar cualquier dificultad a tiempo.\"\n    ],\n    \"correo\": \"carmen.fernandez@gmail.com\",\n    \"usuario_id\": \"73f56c3d-4f1b-4453-a47f-5899bf4ef172\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl_TAREAS",
+			"value": ""
+		},
+		{
+			"key": "baseUrl_AGENTES",
+			"value": ""
+		},
+		{
+			"key": "baseUrl_ANALISIS",
+			"value": ""
+		}
+	]
+}
